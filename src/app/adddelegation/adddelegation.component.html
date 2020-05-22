@@ -1,0 +1,76 @@
+<h2>Dodaj delegacje</h2>
+<form [formGroup]="addDelegationForm" (ngSubmit)="onSubmit(addDelegationForm.value)">
+    <div class="form-group">
+        <label for="description">Opis</label>
+        <input type="text" class="form-control" id="description" formControlName="description">
+    </div>
+    <div class="form-group">
+        <label for="dateTimeStart">Rozpoczęcie delegacji</label>
+        <input type="date" class="form-control" id="dateTimeStart"formControlName="dateTimeStart">
+    </div>
+    <div class="form-group">
+        <label for="dateTimeStop">Zakończenie delegacji</label>
+        <input type="date" class="form-control" id="dateTimeStop" formControlName="dateTimeStop">
+    </div>
+    <div class="form-group">
+        <label for="travelDietAmount">Dieta na podróż(kwota)</label>
+        <input type="text" class="form-control" id="travelDietAmount" formControlName="travelDietAmount">
+    </div>
+    <div class="form-group">
+        <label for="breakfastNumber">Ilość śniadań:</label>
+        <input type="text" class="form-control" id="breakfastNumber" formControlName="breakfastNumber">
+    </div>
+    <div class="form-group">
+        <label for="dinnerNumber">Ilość obiadów:</label>
+        <input type="text" class="form-control" id="dinnerNumber" formControlName="dinnerNumber">
+    </div>
+    <div class="form-group">
+        <label for="supperNumber">Ilość kolacji:</label>
+        <input type="text" class="form-control" id="supperNumber" formControlName="supperNumber">
+    </div>
+    <div class="form-group">
+        <label for="registrationData">Data zapisu:</label>
+        <input type="date" class="form-control" id="registrationData" formControlName="registrationData">
+    </div>
+    <div class="form-group">
+        <label for="ticketPrice">Cena biletu:</label>
+        <input type="text" class="form-control" id="ticketPrice" formControlName="ticketPrice">
+    </div>
+    
+    <div class="form-group">
+        <label for="transportType">Środek transportu: </label><br />
+        <select id="transportType" formControlName="transportType">
+            <option value="0">Auto</option>
+            <option value="1">Pociąg</option>
+            <option value="2">Autobus</option>
+          </select>
+    </div>
+    <div class="form-group">
+        <label for="autoCapacity">Pojemność auta:</label><br />
+        <select id="autoCapacity" formControlName="autoCapacity">
+            <option value="0">Poniżej 900 ccm</option>
+            <option value="1">Powyżej lub równo 900 ccm</option>
+          </select>
+    </div>
+    <div class="form-group">
+        <label for="km">Kilometry:</label>
+        <input type="text" class="form-control" id="km" formControlName="km">
+    </div>
+    <div class="form-group">
+        <label for="accomodationPrice">Koszt zakwaterowania:</label>
+        <input type="text" class="form-control" id="accomodationPrice" formControlName="accomodationPrice">
+    </div>
+    <div class="form-group">
+        <label for="otherTicketsPrice">Inne koszty:</label>
+        <input type="text" class="form-control" id="otherTicketsPrice" formControlName="otherTicketsPrice">
+    </div>
+    <div class="form-group">
+        <label for="otherOutlayDesc">Opis innych wydatków:</label>
+        <input type="text" class="form-control" id="otherOutlayDesc" formControlName="otherOutlayDesc">
+    </div>
+    <div class="form-group">
+        <label for="otherOutlayPrice">Inne wydatki(kwota):</label>
+        <input type="text" class="form-control" id="otherOutlayPrice" formControlName="otherOutlayPrice">
+    </div>
+    <button type="submit" class="btn btn-primary">Dodaj</button>
+</form>

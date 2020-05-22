@@ -1,0 +1,42 @@
+<h2>Delegacje</h2>
+<button type="button" class="btn btn-primary" (click) = "addDelegation();">Dodaj delegacje</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nr</th>
+        <th scope="col">Start</th>
+        <th scope="col">Koniec</th>
+        <th scope="col">Opis</th>
+        <th scope="col">Dieta</th>
+        <th scope="col">Km</th>
+        <th scope="col">Śn</th>
+        <th scope="col">Ob</th>
+        <th scope="col">Kol</th>
+        <th scope="col">c.B</th>
+        <th scope="col">i.B</th>
+        <th scope="col">i.W</th>
+        <th scope="col">i.O</th>
+        <th scope="col">Usuń</th>
+        <th scope="col">Edytuj</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let delegation of user.delegations">
+        <td>{{ delegation.id}}</td>
+        <td>{{ delegation.dateTimeStart}}</td>
+        <td>{{ delegation.dateTimeStop}}</td>
+        <td>{{ delegation.description}}</td>
+        <td>{{ delegation.travelDietAmount}}</td>
+        <td>{{ delegation.km}}</td>
+        <td>{{ delegation.breakfastNumber}}</td>
+        <td>{{ delegation.dinnerNumber}}</td>
+        <td>{{ delegation.supperNumber}}</td>
+        <td>{{ delegation.ticketPrice}}</td>
+        <td>{{ delegation.otherTicketsPrice}}</td>
+        <td>{{ delegation.otherOutlayPrice}}</td>
+        <td>{{ delegation.otherOutlayDesc}}</td>
+        <td><button type="button" class="btn btn-danger" (click)="deleteDelegation(delegation.id);">Usuń</button></td>
+        <td><button type="button" class="btn btn-warning" (click)="editDelegation(delegation.id);">Edytuj</button></td>
+    </tr>
+    </tbody>
+  </table>

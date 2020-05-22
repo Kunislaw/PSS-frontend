@@ -1,0 +1,34 @@
+<h2>Login</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Wprowadź email" formControlName="email">
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger mt-2" >
+            <div *ngIf="email.errors.required" class="mt-2">
+                E-mail is required.
+            </div>
+            <div *ngIf="email.errors.email" class="mt-2">
+                Wrong e-mail schema.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Hasło:</label>
+        <input type="password" class="form-control" id="password" placeholder="Wprowadź hasło" formControlName="password">
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger mt-2">
+            <div *ngIf="password.errors.minlength" class="mt-2">
+                Password should contains at least 8 characters.
+            </div>
+            <div *ngIf="password.errors.required" class="mt-2">
+                Password is required.
+            </div>
+            <!-- <div *ngIf="password.errors.atLeastOneDigit" class="mt-2">
+                Password should contains at least 1 digit.
+            </div>
+            <div *ngIf="password.errors.atLeastOneLetter" class="mt-2">
+                Password should contains at least 1 letter.
+            </div> -->
+        </div>
+    </div>
+    <button [disabled]="!loginForm.valid" type="submit" class="btn btn-primary">Zatwierdź</button>
+</form>

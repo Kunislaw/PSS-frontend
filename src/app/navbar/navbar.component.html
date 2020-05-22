@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" routerLink="/">PSS</a>
+
+  <!-- Links -->
+  <ul class="navbar-nav ml-auto">
+      <li class="nav-item" *ngIf="isUserLoggedIn == false">
+          <a class="nav-link" routerLink="/registration">Rejestracja</a>
+      </li>
+      <li class="nav-item" *ngIf="isUserLoggedIn == false">
+          <a class="nav-link" href="/login">Logowanie</a>
+      </li>
+      <li class="nav-item" *ngIf="isUserLoggedIn == true">
+          <a class="nav-link" href="/delegations">Delegacje</a>
+      </li>
+      <li class="nav-item" *ngIf="isUserLoggedIn == true">
+        <a class="nav-link" href="/useredit">Ustawienia</a>
+      </li>
+      <li class="nav-item" *ngIf="isUserLoggedIn == true">
+          <a class="nav-link" (click) = "logout()" href="#">Wyloguj</a>
+      </li>
+  </ul>
+</nav>

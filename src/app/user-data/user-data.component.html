@@ -1,0 +1,9 @@
+<h2>Twoje dane:</h2>
+    <p><b>Imię:</b> {{ user.name }}</p>
+    <p><b>Nazwisko:</b> {{ user.lastName }}</p>
+    <p><b>E-mail:</b> {{ user.email }}</p>
+    <p><b>Nazwa firmy:</b> {{ user.companyName }}</p>
+    <p><b>NIP firmy:</b> {{ user.companyNip }}</p>
+    <p><b>Adres firmy:</b> {{ user.companyAddress }}</p>
+    <p><b>Status:</b> {{ user.status }}</p>
+    <p><b>Data rejestracji:</b> {{ user.registrationDate | date: 'dd/MM/yyyy hh:mm:ss' }}</p>

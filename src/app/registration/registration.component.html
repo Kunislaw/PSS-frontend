@@ -1,0 +1,79 @@
+<h2>Rejestracja</h2>
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit(registrationForm.value)">
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Wprowadź email" formControlName="email">
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger mt-2">
+            <div *ngIf="email.errors.required" class="mt-2">
+                E-mail is required.
+            </div>
+            <div *ngIf="email.errors.email" class="mt-2">
+                Wrong e-mail schema.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Hasło:</label>
+        <input type="password" class="form-control" id="password" placeholder="Wprowadź hasło" formControlName="password">
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger mt-2">
+            <div *ngIf="password.errors.minlength" class="mt-2">
+                Password should contains at least 8 characters.
+            </div>
+            <div *ngIf="password.errors.required" class="mt-2">
+                Password is required.
+            </div>
+            <!-- <div *ngIf="password.errors.atLeastOneDigit" class="mt-2">
+                Password should contains at least 1 digit.
+            </div>
+            <div *ngIf="password.errors.atLeastOneLetter" class="mt-2">
+                Password should contains at least 1 letter.
+            </div> -->
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="companyAddress">Adres firmy:</label>
+        <input type="text" class="form-control" id="companyAddress" placeholder="Wprowadź adres firmy" formControlName="companyAddress">
+        <div *ngIf="companyAddress.invalid && (companyAddress.dirty || companyAddress.touched)" class="alert alert-danger mt-2">
+            <div *ngIf="companyAddress.errors.required" class="mt-2">
+                Company address is required.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="companyName">Nazwa firmy:</label>
+        <input type="text" class="form-control" id="companyName" placeholder="Wprowadź nazwę firmy" formControlName="companyName">
+        <div *ngIf="companyName.invalid && (companyName.dirty || companyName.touched)" class="alert alert-danger mt-2">
+            <div *ngIf="companyName.errors.required" class="mt-2">
+                Company name is required.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="companyNip">NIP firmy:</label>
+        <input type="text" class="form-control" id="companyNip" placeholder="Wprowadź NIP firmy" formControlName="companyNip">
+        <div *ngIf="companyNip.invalid && (companyNip.dirty || companyNip.touched)" class="alert alert-danger mt-2">
+            <div *ngIf="companyNip.errors.required" class="mt-2">
+                Company NIP is required.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name">Imię:</label>
+        <input type="text" class="form-control" id="name" placeholder="Wprowadź imię" formControlName="name">
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger mt-2">
+            <div *ngIf="name.errors.required" class="mt-2">
+                Name is required.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Nazwisko:</label>
+        <input type="text" class="form-control" id="lastName" placeholder="Wprowadź nazwisko" formControlName="lastName">
+        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger mt-2">
+            <div *ngIf="lastName.errors.required" class="mt-2">
+                Lastname is required.
+            </div>
+        </div>
+    </div>
+    <button [disabled]="!registrationForm.valid" type="submit" class="btn btn-primary">Zatwierdź</button>
+</form>

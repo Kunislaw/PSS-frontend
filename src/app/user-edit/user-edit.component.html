@@ -1,0 +1,24 @@
+<h2>Edycja danych użytkownika</h2>
+<form [formGroup]="editUserForm" (ngSubmit)="onSubmit(editUserForm.value)">
+    <div class="form-group">
+        <label for="companyAddress">Adres firmy:</label>
+        <input type="text" class="form-control" id="companyAddress" value="{{ user.companyAddress }}" formControlName="companyAddress">
+    </div>
+    <div class="form-group">
+        <label for="companyName">Nazwa firmy:</label>
+        <input type="text" class="form-control" id="companyName" value="{{ user.companyName }}" formControlName="companyName">
+    </div>
+    <div class="form-group">
+        <label for="companyNip">NIP firmy:</label>
+        <input type="text" class="form-control" id="companyNip" value="{{ user.companyNip }}" formControlName="companyNip">
+    </div>
+    <div class="form-group">
+        <label for="name">Imię:</label>
+        <input type="text" class="form-control" id="name" value="{{ user.name }}" formControlName="name">
+    </div>
+    <div class="form-group">
+        <label for="lastName">Nazwisko:</label>
+        <input type="text" class="form-control" id="lastName" value="{{ user.lastName }}" formControlName="lastName">
+    </div>
+    <button type="submit" class="btn btn-primary">Zatwierdź</button>
+</form>
