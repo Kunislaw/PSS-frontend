@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class UserService {
 
-  rootUrl = "http://localhost:8080";
+  rootUrl = "https://pss-project.herokuapp.com";
 
   constructor(private http: HttpClient) { }
 
@@ -108,7 +108,7 @@ export class UserService {
   }
   public login(username: string, password: string){
      const headers = new HttpHeaders({Authorization: "Basic " + btoa(username+":"+password)});
-     return this.http.get("http://localhost:8080/login",{headers,responseType:'text' as 'json'});
+     return this.http.get("https://pss-project.herokuapp.com/login",{headers,responseType:'text' as 'json'});
   }
 
 

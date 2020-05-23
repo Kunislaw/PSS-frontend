@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class DelegationService {
 
-  rootUrl = "http://localhost:8080";
+  rootUrl = "https://pss-project.herokuapp.com";
 
   constructor(private http: HttpClient) { }
 
